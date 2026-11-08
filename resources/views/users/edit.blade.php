@@ -1,0 +1,1 @@
+@extends('layouts.app') @section('title','Edit User') @section('content')<h1>Edit User</h1><p class="sub">Update user details and upload a profile picture.</p><div class="panel"><form method="POST" enctype="multipart/form-data" action="{{ route('users.update',$user) }}">@include('users._form')</form></div>@endsection

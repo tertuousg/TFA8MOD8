@@ -1,0 +1,3 @@
+@extends('layouts.app')
+@section('title','Customers')
+@section('content')<div class="top"><div><h1>Customers</h1><p class="sub">Manage customer records.</p></div><a class="btn" href="{{ route('customers.create') }}">+ Add Customer</a></div><div class="panel"><table><thead><tr><th>Full name</th><th>Email</th><th>Phone</th><th>Action</th></tr></thead><tbody>@forelse($customers as $customer)<tr><td>{{ $customer->full_name }}</td><td>{{ $customer->email }}</td><td>{{ $customer->phone ?: '—' }}</td><td><a href="{{ route('customers.edit',$customer) }}">Edit</a></td></tr>@empty<tr><td colspan="4">No customers yet.</td></tr>@endforelse</tbody></table></div>@endsection

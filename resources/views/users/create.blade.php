@@ -1,0 +1,1 @@
+@extends('layouts.app') @section('title','Create User') @section('content')<h1>Create User</h1><p class="sub">Create a new user account.</p><div class="panel"><form method="POST" action="{{ route('users.store') }}">@include('users._form')</form></div>@endsection

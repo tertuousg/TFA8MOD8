@@ -1,0 +1,4 @@
+@csrf
+@if(isset($customer)) @method('PUT') @endif
+<div class="field"><label for="full_name">Full Name *</label><input id="full_name" name="full_name" required value="{{ old('full_name',$customer->full_name ?? '') }}">@error('full_name')<div class="error">{{ $message }}</div>@enderror</div>
+<div class="grid"><div class="field"><label for="email">Email *</label><input id="email" type="email" name="email" required value="{{ old('email',$customer->email ?? '') }}">@error('email')<div class="error">{{ $message }}</div>@enderror</div><div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" value="{{ old('phone',$customer->phone ?? '') }}">@error('phone')<div class="error">{{ $message }}</div>@enderror</div></div><button class="btn" type="submit">Save Customer</button> <a class="btn alt" href="{{ route('customers.index') }}">Cancel</a>
